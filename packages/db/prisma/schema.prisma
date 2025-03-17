@@ -20,15 +20,16 @@ model User {
 }
 
 model Website {
-   id     String    @id    @default(uuid())
-   userId String
-   url    String
-   ticks  WebsiteTick[]
+   id         String    @id    @default(uuid())
+   userId     String
+   url        String
+   ticks      WebsiteTick[]
+   disabled   Boolean    @default(false)
 }
 
 model Validator {
    id       String    @id    @default(uuid())
-   publiKey String
+   publicKey String
    location String
    ip       String
    ticks    WebsiteTick[]
